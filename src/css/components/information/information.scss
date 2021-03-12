@@ -1,0 +1,16 @@
+.info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  &-details {
+    display: flex;
+    align-items: center;
+    font-size: 2.5rem;
+  }
+
+  &-details i {
+    margin-right: 1rem;
+  }
+}

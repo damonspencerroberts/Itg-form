@@ -2,7 +2,7 @@ import React, { useState, Fragment as Fr } from "react" ;
 import Header from "../header/header";
 import FormType from "./form-type";
 
-const Form = () => {
+const Form = (props) => {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
@@ -10,14 +10,16 @@ const Form = () => {
   const [dob, setDob] = useState('');
   const [activeElement, setActiveElement] = useState('first-name')
 
-  const handleSubmit = () => {
-    alert(`
-      First: ${firstName},
-      Last: ${lastName},
-      Email: ${email},
-      Number: ${number},
-      Dob: ${dob}
-    `);
+  const handleSubmit = (e) => {
+    const response = {
+      first: firstName,
+      last: lastName,
+      email: email,
+      number: number,
+      dob: dob
+    }
+    e.preventDefault();
+    props.showModal(response);
   }
 
   const handleActive = (check) => {
@@ -28,7 +30,7 @@ const Form = () => {
     <Fr>
       <Header title = "Sign up" />
       <div className="form-container">
-        <form className = "sign-up-form" onSubmit={handleSubmit}>
+        <form className = "sign-up-form" onSubmit={(e) => handleSubmit(e)}>
           <FormType 
             for = "first-name"
             label = "First name "
