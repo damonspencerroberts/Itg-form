@@ -1,0 +1,27 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300&family=Roboto:wght@500&display=swap');
+
+// Variables
+@import "variables/colors.scss";
+@import "variables/fonts.scss";
+
+// Components
+@import "components/components-index.scss";
+
+// Containers
+@import "containers/page.scss";
+
+html {
+  font-size: 10px;
+}
+
+body {
+  background-color: $bg-color;
+  color: $primary;
+  font-family: $text-font;
+  letter-spacing: 1.1px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $headers-font;
+}

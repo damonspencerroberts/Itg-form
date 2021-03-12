@@ -1,0 +1,77 @@
+.form-container {
+  padding: 2rem;
+  background-color: rgba($bg-color, .7);
+
+  .sign-up-form {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 40%;
+    margin: 0 auto;
+    font-family: $text-font;
+
+    .form-active-class {
+      border: 2px solid $danger;
+    }
+
+    &-required {
+      color: $danger;
+    }
+
+    label {
+      font-size: 2.2rem;
+      font-family: $headers-font;
+      margin-left: 2%;
+      margin-bottom: .8rem;
+    }
+
+    input {
+      border: 2px solid rgba($primary, 0.6);
+      background: transparent;
+      padding: 1.1rem;
+      padding-left: 2.5rem;
+      font-size: 2.2rem;
+      width: 90%;
+      border-radius: 2.5rem;
+      color: rgba($primary, .8);
+      margin: 0 auto 1.2rem auto;
+    }
+
+    input[type='submit'] {
+      background: linear-gradient(to right, $secondary 60%, rgba($secondary, 0.7) 100%);
+      border: none;
+      color: $bg-color;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      margin: 1.2rem auto;
+      cursor: pointer;
+      transition: box-shadow 0.6s;
+    }
+
+    input[type='submit']:hover {
+      background: linear-gradient(to right, rgba($secondary, 0.8) 60%, rgba($secondary, 0.5) 100%);box-shadow: 0 4px 8px rbga(#000, 0.8)
+    }
+  
+    input:active, input:focus {
+      outline: none;
+      border: 2px solid $danger;
+    }
+
+    input[type=date]:invalid::-webkit-datetime-edit {
+      font-family: $text-font !important;
+      color: rgba($primary, .4) !important;
+    }
+
+    input::placeholder {
+      color: rgba($primary, .4);
+      font-family: $text-font;
+      letter-spacing: 1.1px;
+    }
+  
+    button {
+      width: 30%;
+    }
+  }
+}
