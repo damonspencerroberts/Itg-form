@@ -21,3 +21,69 @@ const checkOnlyString = (el) => {
     var ageDate = new Date(ageDifMs); // miliseconds from epoch
     return Math.abs(ageDate.getUTCFullYear() - 1970);
   }
+
+  //beans
+          return (
+    <Fr>
+      <Header title = "Sign up" />
+      <div className="form-container">
+        <form className = "sign-up-form" onSubmit={(e) => handleSubmit(e)}>
+          <FormType 
+            for = "first-name"
+            label = "First name"
+            placeholder = "Phillip"
+            type = "text"
+            name = "first-name"
+            value = {elementValues["firstName"]}
+            change = {(e) => setElement("firstName", e.target.value)}
+            focus = {() => setActiveElement('first-name')}
+            activeClass = {handleActive("first-name")}
+          />
+          <FormType 
+            for = "last-name"
+            label = "Last name "
+            placeholder = "Robinson"
+            type = "text"
+            name = "last-name"
+            value = {elementValues["lastName"]}
+            change = {(e) => setElement("lastName", e.target.value)}
+            focus = {() => setActiveElement('last-name')}
+            activeClass = {handleActive("last-name")}
+          />
+          <FormType 
+            for = "email"
+            label = "Email "
+            placeholder = "philliprobinson@gmail.com"
+            type = "email"
+            name = "email"
+            value = {elementValues["email"]}
+            change = {(e) => setElement("email", e.target.value)}
+            focus = {() => setActiveElement('email')}
+            activeClass = {handleActive("email")}
+          />
+          <FormType 
+            for = "phone-number"
+            label = "Phone number "
+            placeholder = "07378123456"
+            type = "text"
+            name = "phone-number"
+            value = {elementValues["number"]}
+            change = {(e) => setElement("number", e.target.value)}
+            focus = {() => setActiveElement('number')}
+            activeClass = {handleActive("number")}
+          />
+          <FormType 
+            for = "dob"
+            label = "Date of birth "
+            placeholder = "01/01/91"
+            type = "date"
+            name = "dob"
+            value = {elementValues["dob"]}
+            change = {(e) => setElement("dob", e.target.value)}
+            focus = {() => setActiveElement('dob')}
+            activeClass = {handleActive("dob")}
+          />
+          <input type="submit" />
+        </form>
+      </div>
+    </Fr>

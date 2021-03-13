@@ -4,8 +4,8 @@ import Information from "../information/information";
 
 const Modal = (props) => {
   return (
-    <div class="modal-container">
-      <div class="modal">
+    <div className="modal-container">
+      <div className="modal">
         <Header 
           title = "Thank you for signing up" 
           content = "Here is a summary of your information."
@@ -17,7 +17,7 @@ const Modal = (props) => {
           number = {props.number}
           dob = {props.dob}
         />
-        <button class="modal-button" onClick = {() => window.location.reload()}>Return home</button>
+        <button className="modal-button" onClick = {() => window.location.reload()}>Return home</button>
       </div>
     </div>
   );

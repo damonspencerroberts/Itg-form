@@ -11,12 +11,18 @@ const PageContainer = () => {
     setShowModal(!showModal);
   }
 
+  const handleSubmit = (e, valueObject) => {
+    e.preventDefault();
+    const response = {...valueObject};
+    handleShowModal(response);
+  }
+
   return (
     <div className="page-container">
-      <Form showModal = {handleShowModal} />
+      <Form onSubmit = {handleSubmit} />
       {showModal ? <Modal 
-        firstName = {data.first}
-        lastName = {data.last}
+        firstName = {data.firstName}
+        lastName = {data.lastName}
         email = {data.email}
         number = {data.number}
         dob = {data.dob}
