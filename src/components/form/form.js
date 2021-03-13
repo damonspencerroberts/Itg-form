@@ -15,6 +15,7 @@ const Form = (props) => {
   const [elementValues, setElementValues] = useState(values);
   const [activeElement, setActiveElement] = useState('first-name');
   const [valid, setValidEl] = useState(values);
+  const [shouldBeDisabled, setShouldBeDisabled] = useState(false);
 
   const handleActive = (check) => {
     return activeElement === check ? "form-active-class" : "";
@@ -29,12 +30,11 @@ const Form = (props) => {
   const checkOnlyString = (el) => {
     return /^[a-zA-Z]*$/.test(el);
   }
-
   const checkPhone = (el) => {
-    const ukPhone = /^(((\+44\s?\d{4}|\(?0\d{4}\)?)\s?\d{3}\s?\d{3})|((\+44\s?\d{3}|\(?0\d{3}\)?)\s?\d{3}\s?\d{4})|((\+44\s?\d{2}|\(?0\d{2}\)?)\s?\d{4}\s?\d{4}))(\s?\#(\d{4}|\d{3}))?$/
+    const ukPhone = /^(?:0|\+?44)(?:\d\s?){9,10}$/
     return ukPhone.test(el);
   }
-
+  
   const checkEmail = (el) => {
     return /^\S+@\S+\.\S+$/.test(el);
   }
@@ -45,6 +45,15 @@ const Form = (props) => {
     return Math.abs(ageDate.getUTCFullYear() - 1970);
   } 
 
+  const checkDisableButton = (obj) => {
+    const allValidValues = [...new Set(Object.values(obj))];
+    if (allValidValues[0] === "tick" && allValidValues.length === 1) {
+      setShouldBeDisabled(true);
+    } else {
+      setShouldBeDisabled(false);
+    }
+  }
+
   const editChecker = (hash, checker, thingToCheck) => {
     if (thingToCheck && elementValues[checker] !== "") {
       hash[checker] = "tick"
@@ -52,6 +61,7 @@ const Form = (props) => {
       hash[checker] = "cross"
     }
     setValidEl(hash);
+    checkDisableButton(hash);
   }
 
   const checkValidity = (checker) => {
@@ -122,7 +132,11 @@ const Form = (props) => {
       <div className="form-container">
         <form className = "sign-up-form" onSubmit={(e) => props.onSubmit(e, elementValues)}>
           {displayForm}
-          <input type="submit" className={"disabled"} disabled/>
+          <div class="checkbox-container">
+            <input type="checkbox" id="confirmation" required/>
+            <label for="confirmation" class="checkbox">Please confirm that all these details are correct. <span className="sign-up-form-required"> *</span></label>
+          </div>
+          <input type="submit" className={shouldBeDisabled ? null : "disabled"} disabled = {!shouldBeDisabled} />
         </form>
       </div>
     </Fr>

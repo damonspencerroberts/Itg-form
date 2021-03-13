@@ -21,7 +21,7 @@
     label {
       font-size: 2.2rem;
       font-family: $headers-font;
-      margin-left: 2%;
+      margin-left: 1%;
       margin-bottom: .8rem;
     }
 
@@ -91,6 +91,11 @@
 
     .form-icon-green {
       color: $secondary;
+    }
+
+    .form-valid {
+      display: flex;
+      align-items: center;
     }
   }
 }

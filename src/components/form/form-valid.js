@@ -8,10 +8,10 @@ const FormValid = (props) => {
       el = <i className="fas fa-check-circle fa-3x form-icon form-icon-green"></i>
     } else if (props.valid === "cross") {
       el = (
-        <Fragment>
+        <div class="form-valid">
           <i className="fas fa-times-circle fa-3x form-icon form-icon-red"></i>
           <Alert alertContent = {props.alertContent} />
-        </Fragment>
+        </div>
       );
     } else {
       el = null;
