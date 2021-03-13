@@ -134,7 +134,7 @@ const Form = (props) => {
           {displayForm}
           <div class="checkbox-container">
             <input type="checkbox" id="confirmation" required/>
-            <label for="confirmation" class="checkbox">Please confirm that all these details are correct. <span className="sign-up-form-required"> *</span></label>
+            <label for="confirmation" class="checkbox">Please confirm that the above details are correct. <span className="sign-up-form-required"> *</span></label>
           </div>
           <input type="submit" className={shouldBeDisabled ? null : "disabled"} disabled = {!shouldBeDisabled} />
         </form>

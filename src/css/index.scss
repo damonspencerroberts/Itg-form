@@ -13,7 +13,47 @@
 @import "containers/page.scss";
 
 html {
-  font-size: 10px;
+  font-size: 11px;
+}
+
+@media (max-width: 1200px) {
+  html {
+    font-size: 10px;
+  }
+
+  .page-container {
+    margin: 6rem 5rem;
+  }
+
+  .modal-container {
+    .modal {
+      padding: 10rem;
+      margin: 8rem;
+      text-align: center;
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  html {
+    font-size: 9px;
+  }
+
+  .page-container {
+    margin: 5rem 0;
+  }
+  .modal-container {
+    .modal {
+      padding: 8rem;
+      margin: 4rem;
+    }
+  }
+}
+
+@media (max-width: 499px) {
+  html {
+    font-size: 6px;
+  }
 }
 
 * {
@@ -26,7 +66,7 @@ body {
   background-color: $bg-color;
   color: $primary;
   font-family: $text-font;
-  letter-spacing: 1.1px;
+  letter-spacing: .11rem;
 }
 
 h1, h2, h3, h4, h5, h6 {
