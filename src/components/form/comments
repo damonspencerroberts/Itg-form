@@ -1,0 +1,23 @@
+const checkOnlyString = (el) => {
+    if (el === "") {
+      return true
+    } else {
+      
+      setShowAlert(/^[a-zA-Z]*$/.test(el));
+    }
+  }
+
+  const checkPhone = (el) => {
+    const ukPhone = /^(((\+44\s?\d{4}|\(?0\d{4}\)?)\s?\d{3}\s?\d{3})|((\+44\s?\d{3}|\(?0\d{3}\)?)\s?\d{3}\s?\d{4})|((\+44\s?\d{2}|\(?0\d{2}\)?)\s?\d{4}\s?\d{4}))(\s?\#(\d{4}|\d{3}))?$/
+    return ukPhone.test(el);
+  }
+
+  const checkEmail = (el) => {
+    return /^\S+@\S+\.\S+$/.test(el);
+  }
+
+  const calculateAge = (birthday) => { // birthday is a date
+    var ageDifMs = Date.now() - birthday.getTime();
+    var ageDate = new Date(ageDifMs); // miliseconds from epoch
+    return Math.abs(ageDate.getUTCFullYear() - 1970);
+  }
