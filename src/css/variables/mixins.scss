@@ -1,0 +1,17 @@
+@mixin page-button {
+  background: linear-gradient(to right, $secondary 60%, rgba($secondary, 0.7) 100%);
+  border: none;
+  color: $bg-color;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 1.2rem auto;
+  cursor: pointer;
+  transition: box-shadow 0.6s;
+
+}
+
+@mixin page-button-hover {
+  background: linear-gradient(to right, rgba($secondary, 0.8) 60%, rgba($secondary, 0.5) 100%);box-shadow: 0 4px 8px rbga(#000, 0.8)
+}

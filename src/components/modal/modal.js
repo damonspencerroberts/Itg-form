@@ -17,6 +17,7 @@ const Modal = (props) => {
           number = {props.number}
           dob = {props.dob}
         />
+        <button class="modal-button" onClick = {() => window.location.reload()}>Return home</button>
       </div>
     </div>
   );

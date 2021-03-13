@@ -3,7 +3,7 @@ import React, {Fragment as Fr} from "react";
 const FormType = (props) => {
   return (
     <Fr>
-      <label for={props.for} aria-required>{props.label} <span className="sign-up-form-required">*</span></label>
+      <label htmlFor={props.for} aria-required>{props.label} <span className="sign-up-form-required">*</span></label>
       <input
         className={`${props.activeClass}`}
         placeholder={props.placeholder}

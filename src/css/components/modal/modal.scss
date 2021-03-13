@@ -12,11 +12,31 @@
 
   .modal {
     opacity: 1;
-    padding: 2rem 8rem;
+    padding: 10rem;
     background: white;
     margin: 3rem 20rem;
     z-index: 10;
     height: 80vh;
     width: 50vw;
+
+    &-button {
+      border: 2px solid rgba($primary, 0.6);
+      background: transparent;
+      padding: 1.1rem;
+      padding-left: 2.5rem;
+      font-size: 2.2rem;
+      width: 100%;
+      border-radius: 2.5rem;
+      color: rgba($primary, .8);
+      margin: 2rem auto 1.2rem auto;
+      margin-top: 5rem !important;
+      @include page-button;
+    }
+  
+    &-button:hover {
+      @include page-button-hover;
+    }
+
   }
+  
 }
