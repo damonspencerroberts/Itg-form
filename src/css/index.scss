@@ -48,11 +48,14 @@ html {
       margin: 4rem;
     }
   }
+  .form-container .sign-up-form {
+    width: 80%;
+  }
 }
 
 @media (max-width: 499px) {
   html {
-    font-size: 6px;
+    font-size: 8px;
   }
 }
 
