@@ -3,6 +3,12 @@ import Form from "../components/form/form";
 import Modal from "../components/modal/modal";
 
 const PageContainer = () => {
+  const options = { 
+    month: "long", 
+    day: "numeric",
+    year: "numeric"
+  };
+
   const [showModal, setShowModal] = useState(false);
   const [data, setData] = useState({});
   
@@ -25,7 +31,7 @@ const PageContainer = () => {
         lastName = {data.lastName}
         email = {data.email}
         number = {data.number}
-        dob = {data.dob}
+        dob = {new Intl.DateTimeFormat("en-US", options).format(new Date(data.dob))}
         /> : null }
     </div>
   );
