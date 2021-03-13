@@ -11,14 +11,16 @@ const PageContainer = () => {
 
   const [showModal, setShowModal] = useState(false);
   const [data, setData] = useState({});
+  const [userAge, setUserAge] = useState(null);
   
   const handleShowModal = (elements) => {
     setData(elements)
     setShowModal(!showModal);
   }
 
-  const handleSubmit = (e, valueObject) => {
+  const handleSubmit = (e, valueObject, age) => {
     e.preventDefault();
+    setUserAge(age);
     const response = {...valueObject};
     handleShowModal(response);
   }
@@ -32,6 +34,7 @@ const PageContainer = () => {
         email = {data.email}
         number = {data.number}
         dob = {new Intl.DateTimeFormat("en-US", options).format(new Date(data.dob))}
+        age = {userAge}
         /> : null }
     </div>
   );

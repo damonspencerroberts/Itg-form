@@ -130,7 +130,7 @@ const Form = (props) => {
     <Fr>
       <Header title = "Sign up" />
       <div className="form-container">
-        <form className = "sign-up-form" onSubmit={(e) => props.onSubmit(e, elementValues)}>
+        <form className = "sign-up-form" onSubmit={(e) => props.onSubmit(e, elementValues, calculateAge(new Date(elementValues["dob"])))}>
           {displayForm}
           <div class="checkbox-container">
             <input type="checkbox" id="confirmation" required/>

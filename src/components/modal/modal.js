@@ -16,6 +16,7 @@ const Modal = (props) => {
           email = {props.email}
           number = {props.number}
           dob = {props.dob}
+          age = {props.age}
         />
         <button className="modal-button" onClick = {() => window.location.reload()}>Return home</button>
       </div>

@@ -17,7 +17,7 @@ const Information = (props) => {
       </div>
       <div className="info-details">
         <i className="fas fa-calendar-alt"></i>
-        <p>{props.dob}</p>
+        <p>{props.dob} ({props.age} years old)</p>
       </div>
     </div>
   );
