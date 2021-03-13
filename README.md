@@ -12,3 +12,8 @@ When submitted a confirmation modal pops up with the successfully submitted data
 
 ### Screenshots
 
+![Not yet completed](public/images/not-yet.png)
+
+![Not yet completed](public/images/success.png)
+
+![Not yet completed](public/images/modal.png)
