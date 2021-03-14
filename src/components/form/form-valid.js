@@ -8,7 +8,7 @@ const FormValid = (props) => {
       el = <i className="fas fa-check-circle fa-3x form-icon form-icon-green"></i>
     } else if (props.valid === "cross") {
       el = (
-        <div class="form-valid">
+        <div className="form-valid">
           <i className="fas fa-times-circle fa-3x form-icon form-icon-red"></i>
           <Alert alertContent = {props.alertContent} />
         </div>

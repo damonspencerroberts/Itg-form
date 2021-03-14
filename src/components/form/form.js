@@ -132,11 +132,11 @@ const Form = (props) => {
       <div className="form-container">
         <form className = "sign-up-form" onSubmit={(e) => props.onSubmit(e, elementValues, calculateAge(new Date(elementValues["dob"])))}>
           {displayForm}
-          <div class="checkbox-container">
+          <div className="checkbox-container">
             <input type="checkbox" id="confirmation" required/>
-            <label for="confirmation" class="checkbox">Please confirm that the above details are correct. <span className="sign-up-form-required"> *</span></label>
+            <label htmlFor="confirmation" className="checkbox">Please confirm that the above details are correct. <span className="sign-up-form-required"> *</span></label>
           </div>
-          <input type="submit" className={shouldBeDisabled ? null : "disabled"} disabled = {!shouldBeDisabled} />
+          <input id="sign-in" type="submit" className={shouldBeDisabled ? null : "disabled"} disabled = {!shouldBeDisabled} />
         </form>
       </div>
     </Fr>

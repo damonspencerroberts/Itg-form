@@ -1,16 +1,21 @@
-import React from 'react';
-import Enzyme, {mount} from 'enzyme';
-import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
-import Form from './components/form/form';
- 
-Enzyme.configure({ adapter: new Adapter() });
+// import React from 'react'
+// import Form from "./components/form/form";
+// import { render, fireEvent } from '@testing-library/react'
+// import { act } from 'react-dom/test-utils'
 
 
-it('calls onSubmit prop function when form is submitted', () => {
-  const onSubmitFn = jest.fn();
-  console.log(onSubmitFn)
-  const wrapper = mount(<Form onSubmit = {onSubmitFn}/>);
-  const form = wrapper.find('form');
-  form.simulate('submit');
-  expect(onSubmitFn).toHaveBeenCalledTimes(1);
-});
+// describe("With valid inputs", () => {
+//   it("renders the email validation error", async () => {
+//     const {getByPlaceholderText, container} = render(<Form />)
+
+//     const nameInput = getByPlaceholderText("philliprobinson@gmail.com")
+
+//     await act(async () => {
+//       fireEvent.change(nameInput, {target: {value: 'damon@test.com'}})
+//       fireEvent.blur(nameInput)
+//     });
+
+//     console.log(nameInput)
+//     expect(container.innerHTML).toMatch(/form-icon-green/)
+//   })
+// })
