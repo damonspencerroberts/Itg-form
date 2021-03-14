@@ -105,6 +105,18 @@ const Form = (props) => {
     return final;
   }
 
+  const checkValidValue = (el) => {
+    let successClass;
+    if (valid[el] === "tick") {
+      successClass = "border-green"
+    } else if (valid[el] === "cross") {
+      successClass = "border-red"
+    } else {
+      successClass = null;
+    }
+    return successClass;
+  }
+
   const displayForm = FormContent.map((e, i) => {
     return (
       <Fr key = {i}>
@@ -121,6 +133,7 @@ const Form = (props) => {
           valid = {valid[e.element]}
           focusOut = {() => checkValidity(e.element)}
           alertContent = {handleAlertContent(e.title)}
+          validClass = {checkValidValue(e.element)}
         />
       </Fr>
     );

@@ -7,7 +7,7 @@ const FormType = (props) => {
       <label htmlFor={props.for} aria-required>{props.label}<span className="sign-up-form-required"> *</span></label>
       <div className="form-input">
         <input
-          className={`${props.activeClass}`}
+          className={`${props.activeClass} ${props.validClass}`}
           placeholder={props.placeholder}
           type={props.type} 
           name={props.name} 
